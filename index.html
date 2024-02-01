@@ -3,40 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Organizer</title>
   </head>
   <body>
-    <main class="calculator">
-      <div class="calculator__display">
-        <div class="calculator__history">10</div>
-        <div class="calculator__total">20</div>
-      </div>
-      <div class="calculator__action">
-        <div class="calc__button clear">C</div>
-        <div class="calc__button oper">( )</div>
-        <div class="calc__button oper">%</div>
-        <div class="calc__button oper">/</div>
+    <main>
+      <div class="container">
+        <!-- app button box -->
+        <div class="btn-box">
+          <button id="btnapp" class="appbtn todoselect">
+            select <span class="pink">todo app</span>
+          </button>
 
-        <div class="calc__button">7</div>
-        <div class="calc__button">8</div>
-        <div class="calc__button">9</div>
-        <div class="calc__button oper">*</div>
+          <button id="btnapp" class="appbtn calcselect">
+            select <span class="blue">calculator</span>
+          </button>
 
-        <div class="calc__button">4</div>
-        <div class="calc__button">5</div>
-        <div class="calc__button">6</div>
-        <div class="calc__button oper">-</div>
+          <button id="btnapp" class="appbtn converselect">
+            select <span class="yellow">converter</span>
+          </button>
+        </div>
 
-        <div class="calc__button">1</div>
-        <div class="calc__button">2</div>
-        <div class="calc__button">3</div>
-        <div class="calc__button oper">+</div>
+        <!-- calculator app -->
 
-        <div class="calc__button">0</div>
-        <div class="calc__button">.</div>
-        <div class="calc__button equal">=</div>
+        <section class="calculator">
+          <div class="calculator__display" id="result">
+            0
+            <!-- <div class="calculator__history"></div> -->
+            <!-- <div class="calculator__total">20</div> -->
+          </div>
+          <div class="calculator__action" id="action">
+            <button class="calc__button clear" id="clear">C</button>
+            <button class="calc__button back">←</button>
+            <button class="calc__button oper">%</button>
+            <button class="calc__button oper">/</button>
+
+            <button class="calc__button">7</button>
+            <button class="calc__button">8</button>
+            <button class="calc__button">9</button>
+            <button class="calc__button oper">*</button>
+
+            <button class="calc__button">4</button>
+            <button class="calc__button">5</button>
+            <button class="calc__button">6</button>
+            <button class="calc__button oper">-</button>
+
+            <button class="calc__button">1</button>
+            <button class="calc__button">2</button>
+            <button class="calc__button">3</button>
+            <button class="calc__button oper">+</button>
+
+            <button class="calc__button">0</button>
+            <button class="calc__button">.</button>
+            <button class="calc__button equal" id="equal">=</button>
+          </div>
+        </section>
+
+        <!-- todo app -->
+
+        <section class="todo">
+          <form autocomplete="off">
+            <label>
+              <input
+                id="new-todo"
+                name="todo"
+                type="text"
+                placeholder="Add a task..."
+              />
+            </label>
+            <select id="user-todo" name="user">
+              <option disabled selected>Select user</option>
+            </select>
+            <button id="todo-btn">Add Task</button>
+          </form>
+          <ul calss="todo__list" id="todo-list"></ul>
+        </section>
+
+        <div>DAILY APP</div>
       </div>
     </main>
+    <script src="js/calc.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/selector.js"></script>
   </body>
 </html>
