@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/337370fe84.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Organizer</title>
   </head>
   <body>
     <main>
       <div class="container">
         <!-- app button box -->
+
         <div class="btn-box">
           <button id="btnapp" class="appbtn todoselect">
             select <span class="pink">todo app</span>
@@ -23,6 +28,27 @@
             select <span class="yellow">converter</span>
           </button>
         </div>
+
+        <!-- todo app -->
+
+        <section class="todo">
+          <form autocomplete="off" id="todoform">
+            <label>
+              <input
+                id="todoinput"
+                id="new-todo"
+                name="todo"
+                type="text"
+                placeholder="Add a task..."
+              />
+            </label>
+            <select id="user-todo" name="user">
+              <option disabled selected>Select user</option>
+            </select>
+            <button id="todo-btn">Add Task</button>
+          </form>
+          <ul calss="todo__list" id="todo-list"></ul>
+        </section>
 
         <!-- calculator app -->
 
@@ -59,24 +85,55 @@
           </div>
         </section>
 
-        <!-- todo app -->
+        <!-- converter -->
 
-        <section class="todo">
-          <form autocomplete="off">
-            <label>
-              <input
-                id="new-todo"
-                name="todo"
-                type="text"
-                placeholder="Add a task..."
-              />
-            </label>
-            <select id="user-todo" name="user">
-              <option disabled selected>Select user</option>
-            </select>
-            <button id="todo-btn">Add Task</button>
+        <section class="converter">
+          <!-- <div class="converter__inner"> -->
+          <h1 class="h1">Currency Converter</h1>
+          <form action="#" id="converform">
+            <div class="amount">
+              <label for="amount__input">
+                Enter Amount
+                <input
+                  type="text"
+                  placeholder=""
+                  id="amount__input"
+                  name="amount__input"
+                  value="1"
+                />
+              </label>
+            </div>
+            <div class="drop__list">
+              <div class="from">
+                <p class="from__text">From</p>
+                <div class="select__box">
+                  <img
+                    src="https://flagsapi.com/US/flat/64.png"
+                    alt="USA"
+                    id="drop__img"
+                  />
+
+                  <select name="" id="drop__select"></select>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-right-arrow-left drop__icon"></i>
+              <div class="to">
+                <p class="to__text">To</p>
+                <div class="select__box">
+                  <img
+                    src="https://flagsapi.com/GE/flat/64.png"
+                    alt="RUS"
+                    id="drop__img"
+                  />
+
+                  <select name="" id="drop__select"></select>
+                </div>
+              </div>
+            </div>
+            <div class="exchange__rate"></div>
+            <button class="exchange__btn">Get Exchange Rate</button>
           </form>
-          <ul calss="todo__list" id="todo-list"></ul>
+          <!-- </div> -->
         </section>
 
         <div>DAILY APP</div>
@@ -84,6 +141,8 @@
     </main>
     <script src="js/calc.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/country-code.js"></script>
+    <script src="js/converter.js"></script>
     <script src="js/selector.js"></script>
   </body>
 </html>

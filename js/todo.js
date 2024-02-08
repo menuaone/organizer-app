@@ -2,7 +2,7 @@
   // Globals
   const todoList = document.getElementById("todo-list");
   const userSelect = document.getElementById("user-todo");
-  const form = document.querySelector("form");
+  const form = document.getElementById("todoform");
   let todos = [];
   let users = [];
 
