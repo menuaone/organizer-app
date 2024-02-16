@@ -3,6 +3,7 @@ const fromCurrency = document.querySelector(".from select");
 const toCurrency = document.querySelector(".to select");
 const converBtn = document.querySelector(".exchange__btn");
 const apiKey = "7db54c23ec3be414356c4e98";
+const changes = document.getElementById("change__btn");
 
 // цикл для перебора кодов стран в объекте country code и добавление их в DOM дерево
 // всего 2 итерации во внешнем цикле. Первая итерация - заполняет правый тег select, вторая - левый.
@@ -22,6 +23,7 @@ for (let i = 0; i < dropList.length; i++) {
     dropList[i].insertAdjacentHTML("beforeend", optionCode);
   }
 
+  // загрузка флагов, при смене страны
   dropList[i].addEventListener("change", (e) => {
     loadFlag(e.target);
   });
@@ -33,7 +35,7 @@ function loadFlag(element) {
       let imgCode = element.parentElement.querySelector("img");
 
       imgCode.src = `https://flagsapi.com/${country_code[code]}/flat/64.png`;
-      console.log(country_code[code]);
+      // console.log(country_code[code]);
     }
   }
 }
@@ -45,12 +47,22 @@ converBtn.addEventListener("click", (e) => {
   getExchangeRate();
 });
 
+changes.addEventListener("click", () => {
+  let curcode = fromCurrency.value;
+  fromCurrency.value = toCurrency.value;
+  toCurrency.value = curcode;
+  getExchangeRate();
+  loadFlag(fromCurrency);
+  loadFlag(toCurrency);
+});
+
 // при ЗАГРУЗКЕ окна получает данные из функции и выдает текущий курс
 window.addEventListener("load", (e) => {
   getExchangeRate();
 });
 
 // получает данные из инпута, получает данные из api через fetch далее получаем общее значене
+// нижняя строчка состояния курса
 function getExchangeRate() {
   const amount = document.getElementById("amount__input");
   const rateTxt = document.querySelector(".exchange__rate");
@@ -74,5 +86,8 @@ function getExchangeRate() {
       let exchangeRate = result.conversion_rates[toCurrency.value];
       let totalExchange = (exchangeRate * amountValue).toFixed(2);
       rateTxt.innerText = `${amountValue} ${fromCurrency.value} = ${totalExchange} ${toCurrency.value}`;
+    })
+    .catch(() => {
+      rateTxt.innerText = "Something went wrong. Try later.";
     });
 }
