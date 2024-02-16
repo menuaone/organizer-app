@@ -508,6 +508,12 @@ main {
   box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.6);
 }
 
+.error-text {
+  font-size: 10px;
+  color: var(--white);
+  padding-left: 25px;
+}
+
 .search {
   display: flex;
   justify-content: space-evenly;
@@ -528,6 +534,11 @@ main {
   outline: none;
 }
 
+.search__btn {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+}
 .search__icon {
   color: var(--white);
   cursor: pointer;

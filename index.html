@@ -148,15 +148,21 @@
                 placeholder="City name..."
                 required
                 class="weather__input"
+                spellcheck="false"
+                autocomplete="off"
+                value=""
               />
-              <div class="search__icon-box">
+              <button class="search__btn">
                 <i class="fa-solid fa-magnifying-glass search__icon"></i>
-              </div>
+              </button>
+            </div>
+            <div id="error_box" class="error-box">
+              <p class="error-text"></p>
             </div>
             <div class="weather__main">
               <img src="img/rain.png" alt="rain" class="weather__icon" />
               <h1 class="temp">22°C</h1>
-              <h2 class="city">Tbilisi</h2>
+              <h2 class="city">New-York</h2>
               <div class="main__details">
                 <div class="col">
                   <img
@@ -188,5 +194,6 @@
     <script src="js/country-code.js"></script>
     <script src="js/converter.js"></script>
     <script src="js/selector.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
