@@ -35,6 +35,8 @@ main {
   align-items: center;
 
   height: 100vh;
+
+  position: relative;
 }
 
 :root {
@@ -52,6 +54,36 @@ main {
   --yellow: #fce34d;
 }
 
+/* about */
+
+.about {
+  position: absolute;
+  width: 250px;
+  top: 80px;
+
+  color: var(--mainapp);
+}
+
+.about__title {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.about__text {
+  line-height: 25px;
+  margin-bottom: 10px;
+  max-width: 210px;
+}
+
+.about__link {
+  text-decoration: none;
+  color: var(--mainapp);
+  transition: color 0.2s ease-in;
+}
+
+.about__link:hover {
+  color: var(--accent);
+}
 /* App Button */
 
 .btn-box {
@@ -484,17 +516,36 @@ main {
 /* Today app */
 .today {
   width: 230px;
-  height: 150px;
-
+  height: 120px;
+  padding: 15px 20px 20px;
+  gap: 10px;
   background-color: var(--main);
   opacity: 0.9;
   border-radius: 30px;
   box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.6);
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.time {
+  font-size: 30px;
+}
+
+.hours {
+  padding-right: 5px;
+}
+
+.sec {
+  padding-left: 5px;
 }
 
 /* Weather app */
