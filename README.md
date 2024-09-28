@@ -1,6 +1,19 @@
 # organizer app
 
-this app can easily help u to project your day.
-here is todo-list, calculator, converter and daily time, date, weather information. All that u need every day!
+Created on pure JS and CSS  
+This app will help you to design your day easily.  
 
-Also this projects was create to train JS skills.
+# Features:  
+  
+_Todo-list_  
+_Calculator_  
+_Current exchange rate converter_  
+_Clock with date checker by local time_  
+_Weather information for your country (default - Georgia)_   
+
+Everything you need daily!
+
+_App work presentation:_
+
+https://github.com/user-attachments/assets/bfbb6438-a25b-46ea-b70e-b4bc7ebc3d32
+
