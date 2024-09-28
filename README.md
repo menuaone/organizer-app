@@ -1,4 +1,4 @@
-# organizer app
+# Organizer app
 
 Created on pure JS and CSS  
 This app will help you to design your day easily.  
